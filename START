@@ -1,0 +1,30 @@
+DynStat.c:13:2: warning: implicitly declaring library function 'printf' with type 'int (const char *, ...)'
+        printf(argv[1]);
+        ^
+DynStat.c:13:2: note: please include the header <stdio.h> or explicitly provide a declaration for 'printf'
+DynStat.c:13:9: warning: format string is not a string literal (potentially insecure) [-Wformat-security]
+        printf(argv[1]);
+               ^~~~~~~
+DynStat.c:15:15: warning: implicitly declaring library function 'malloc' with type 'void *(unsigned long)'
+        buf = (char*)malloc(sizeof(char)*size + 1);
+                     ^
+DynStat.c:15:15: note: please include the header <stdlib.h> or explicitly provide a declaration for 'malloc'
+DynStat.c:17:2: warning: implicit declaration of function 'strcpy_s' is invalid in C99 [-Wimplicit-function-declaration]
+        strcpy_s(buf, sizeof(buf), argv[2]);
+        ^
+DynStat.c:27:11: warning: implicitly declaring library function 'strlen' with type 'unsigned long (const char *)'
+        length = strlen(buf);
+                 ^
+DynStat.c:27:11: note: please include the header <string.h> or explicitly provide a declaration for 'strlen'
+DynStat.c:31:9: warning: implicit declaration of function 'free' is invalid in C99 [-Wimplicit-function-declaration]
+        free(buf);
+        ^
+DynStat.c:6:14: warning: unused parameter 'argc' [-Wunused-parameter]
+int main(int argc, char *argv[])
+             ^
+7 warnings generated.
+Undefined symbols for architecture x86_64:
+  "_strcpy_s", referenced from:
+      _main in DynStat-bd2b81.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
